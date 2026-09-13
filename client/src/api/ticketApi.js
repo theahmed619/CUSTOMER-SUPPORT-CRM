@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000/api/tickets';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+const API_BASE_URL = `${BASE_URL}/api/tickets`;
 
 export const fetchTickets = async (status = '', search = '', page = 1, limit = 5) => {
   const params = { page, limit };
