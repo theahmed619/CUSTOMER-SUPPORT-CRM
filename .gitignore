@@ -1,1 +1,19 @@
+# Sensitive environment variables
 .env
+*.env
+server/.env
+
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production build outputs
+dist/
+dist-ssr/
+*.local
+
+# Editor & System files
+.vscode/
+.DS_Store
+*.log
