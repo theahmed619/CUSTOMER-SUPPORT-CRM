@@ -1,4 +1,3 @@
-// server.js
 import "dotenv/config";// Sabse upar env variables load karega
 import express from "express";
 import cors from "cors";

@@ -19,20 +19,20 @@ export default function App() {
   const [isCreateOpen, setIsCreateOpen] = useState(false);
   const [selectedTicketId, setSelectedTicketId] = useState(null);
 
-  // 1. loadTickets me fallback check:
+  //  loadTickets  
   const loadTickets = async () => {
     setLoading(true);
     try {
       const data = await fetchTickets(statusFilter, searchTerm, page, 5);
 
-      // Agar response object me tickets array hai to wo lo, warna direct data lo
+      
       if (data?.tickets) {
         setTickets(data.tickets);
         setPagination(
           data.pagination || { total: data.tickets.length, totalPages: 1 },
         );
       } else if (Array.isArray(data)) {
-        // Fallback agar backend purana format bhej raha ho
+       
         setTickets(data);
         setPagination({ total: data.length, totalPages: 1 });
       }
@@ -43,7 +43,7 @@ export default function App() {
     }
   };
 
-  // Filter ya search badalne par page 1 par reset karein
+  // Filter  search 
   useEffect(() => {
     setPage(1);
   }, [statusFilter, searchTerm]);
@@ -99,7 +99,7 @@ export default function App() {
             onSelectTicket={(id) => setSelectedTicketId(id)}
           />
 
-          {/* Pagination Controls */}
+         
           {/* Pagination Controls */}
           <div className="flex items-center justify-between px-6 py-4 border-t border-slate-100 bg-slate-50/50">
             <span className="text-xs font-medium text-slate-500">
